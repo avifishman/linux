@@ -1,0 +1,59 @@
+/*
+ * DTS file for all NPCM750 SoCs
+ *
+ * Copyright 2012 Tomer Maimon <tomer.maimon@nuvoton.com>
+ *
+ * The code contained herein is licensed under the GNU General Public
+ * License. You may obtain a copy of the GNU General Public License
+ * Version 2 or later at the following locations:
+ *
+ * http://www.opensource.org/licenses/gpl-license.html
+ * http://www.gnu.org/copyleft/gpl.html
+ */
+
+/dts-v1/;
+#include "nuvoton-npcm750.dtsi"
+
+/ {
+	model = "Nuvoton npcm750 Development Board (Device Tree)";
+	compatible = "nuvoton,npcm750";
+
+	chosen {
+		stdout-path = &serial3;
+		bootargs = "earlyprintk=serial,serial3,115200";
+	};
+
+	memory {
+		reg = <0 0x40000000>;
+	};
+
+	cpus {
+		enable-method = "nuvoton,npcm7xx-smp";
+	};
+
+	clk: clock-controller@f0801000 {
+		status = "okay";
+	};
+
+	apb {
+		watchdog1: watchdog@f0009000 {
+			status = "okay";
+		};
+
+		serial0: serial0@f0001000 {
+			status = "okay";
+		};
+
+		serial1: serial1@f0002000 {
+			status = "okay";
+		};
+
+		serial2: serial2@f0003000 {
+			status = "okay";
+		};
+
+		serial3: serial3@f0004000 {
+			status = "okay";
+		};
+	};
+};
