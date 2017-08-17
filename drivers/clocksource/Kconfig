@@ -140,6 +140,12 @@ config VT8500_TIMER
 	help
 	  Enables support for the VT8500 driver.
 
+config NPCM750_TIMER
+	bool "NPCM750 timer driver" if COMPILE_TEST
+	depends on GENERIC_CLOCKEVENTS
+	depends on HAS_IOMEM
+	help
+	  Enables support for the NPCM750 driver.
 config CADENCE_TTC_TIMER
 	bool "Cadence TTC timer driver" if COMPILE_TEST
 	depends on COMMON_CLK
