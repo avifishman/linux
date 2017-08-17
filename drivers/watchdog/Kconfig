@@ -504,6 +504,16 @@ config COH901327_WATCHDOG
 	  This watchdog is used to reset the system and thus cannot be
 	  compiled as a module.
 
+config NPCM750_WATCHDOG
+	bool "NPCM750 watchdog"
+	depends on CPU_NPCM750 || COMPILE_TEST
+	default y if MACH_NPCM750
+	select WATCHDOG_CORE
+	help
+	  Say Y here to include Watchdog timer support for the
+	  watchdog embedded into the NPCM750.
+	  This watchdog is used to reset the system and thus cannot be
+	  compiled as a module.
 config TWL4030_WATCHDOG
 	tristate "TWL4030 Watchdog"
 	depends on TWL4030_CORE
