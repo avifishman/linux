@@ -39,6 +39,8 @@ config CPU_NPCM750_SMP
 	bool "Support for NPCM750 BMC CPU SMP (Poleg)"
 	select HAVE_SMP
 	select HAVE_ARM_SCU
+	select ARM_ERRATA_458693
+	select ARM_ERRATA_742231
 	select ARM_ERRATA_794072
 	select PL310_ERRATA_588369
 	select PL310_ERRATA_727915
@@ -54,5 +56,22 @@ config CPU_NPCM750_SMP
 	  Support for dual core NPCM750 BMC CPU (Poleg).
 
 	  Dual core variant of the Nuvoton NPCM750 BMC based on the Cortex A9.
+
+comment "NPCMX50 Machines"
+
+config MACH_NPCM750
+	depends on ARCH_NPCM && CPU_NPCM750
+	bool "Nuvoton NPCM750 Machine"
+	help
+	  Nuvoton NPCM750 Machine
+
+config NPCM750_PCI
+	depends on ARCH_NPCM
+	bool "Nuvoton NPCM750 PCI support"
+	default n
+	select PCI
+	select PCI_MSI
+	help
+	  NPCM750 PCIe Root Complex support.
 
 endif
