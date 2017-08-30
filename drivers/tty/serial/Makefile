@@ -92,6 +92,7 @@ obj-$(CONFIG_SERIAL_STM32)	+= stm32-usart.o
 obj-$(CONFIG_SERIAL_MVEBU_UART)	+= mvebu-uart.o
 obj-$(CONFIG_SERIAL_PIC32)	+= pic32_uart.o
 obj-$(CONFIG_SERIAL_MPS2_UART)	+= mps2-uart.o
+obj-$(CONFIG_SERIAL_NPCMX50) += npcmX50_uart.o
 obj-$(CONFIG_SERIAL_OWL)	+= owl-uart.o
 
 # GPIOLIB helpers for modem control lines
