@@ -1604,7 +1604,7 @@ M:	Tomer Maimon <tmaimon77@gmail.com>
 R:	Brendan Higgins <brendanhiggins@google.com>
 R:	Rick Altherr <raltherr@google.com>
 L:	openbmc@lists.ozlabs.org (moderated for non-subscribers)
-S:	Maintained
+S:	Supported
 F:	arch/arm/mach-npcm/
 F:	arch/arm/boot/dts/nuvoton-npcm*
 F:	include/dt-bindings/clock/nuvoton,npcm7xx-clks.h
