@@ -1,3 +1,3 @@
-obj-$(CONFIG_CPU_NPCM750_SMP)	+= platsmp.o headsmp.o
+AFLAGS_headsmp.o		+= -march=armv7-a
 
-obj-$(CONFIG_CPU_NPCM750)	+= npcm7xx.o
+obj-$(CONFIG_CPU_NPCM750)	+= npcm7xx.o platsmp.o headsmp.o

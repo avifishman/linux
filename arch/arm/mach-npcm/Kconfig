@@ -10,13 +10,22 @@ if ARCH_NPCM
 comment "NPCMX50 CPU type"
 
 config CPU_NPCM750
-	depends on ARCH_NPCM && ARCH_MULTI_V7 && !CPU_V6 && !CPU_V6K
+	depends on ARCH_NPCM && ARCH_MULTI_V7
 	bool "Support for NPCM750 BMC CPU (Poleg)"
 	select CACHE_L2X0
 	select CPU_V7
 	select ARM_GIC
+	select HAVE_SMP
+	select SMP
+	select SMP_ON_UP
+	select HAVE_ARM_SCU
+	select HAVE_ARM_TWD if SMP
+	select ARM_ERRATA_720789
 	select ARM_ERRATA_754322
 	select ARM_ERRATA_764369
+	select ARM_ERRATA_794072
+	select PL310_ERRATA_588369
+	select PL310_ERRATA_727915
 	select USB_EHCI_ROOT_HUB_TT
 	select USB_ARCH_HAS_HCD
 	select USB_ARCH_HAS_EHCI
@@ -26,52 +35,14 @@ config CPU_NPCM750
 	select USB
 	select FIQ
 	select CPU_USE_DOMAINS
+	select GENERIC_CLOCKEVENTS
+	select CLKDEV_LOOKUP
 	select COMMON_CLK if OF
 	select NPCM750_TIMER
 	select MFD_SYSCON
 	help
-	  Support for single core NPCM750 BMC CPU (Poleg).
+	  Support for NPCM750 BMC CPU (Poleg).
 
-	  Single core variant of the Nuvoton NPCM750 BMC based on the Cortex A9.
-
-config CPU_NPCM750_SMP
-	depends on CPU_NPCM750
-	bool "Support for NPCM750 BMC CPU SMP (Poleg)"
-	select HAVE_SMP
-	select HAVE_ARM_SCU
-	select ARM_ERRATA_458693
-	select ARM_ERRATA_742231
-	select ARM_ERRATA_794072
-	select PL310_ERRATA_588369
-	select PL310_ERRATA_727915
-	select ARM_ERRATA_720789
-	select DEBUG_SPINLOCK
-	select GENERIC_CLOCKEVENTS
-	select SMP
-	select HAVE_ARM_TWD if SMP
-	select HAVE_ARM_SCU if SMP
-	select CLKDEV_LOOKUP
-	select COMMON_CLK if OF
-	help
-	  Support for dual core NPCM750 BMC CPU (Poleg).
-
-	  Dual core variant of the Nuvoton NPCM750 BMC based on the Cortex A9.
-
-comment "NPCMX50 Machines"
-
-config MACH_NPCM750
-	depends on ARCH_NPCM && CPU_NPCM750
-	bool "Nuvoton NPCM750 Machine"
-	help
-	  Nuvoton NPCM750 Machine
-
-config NPCM750_PCI
-	depends on ARCH_NPCM
-	bool "Nuvoton NPCM750 PCI support"
-	default n
-	select PCI
-	select PCI_MSI
-	help
-	  NPCM750 PCIe Root Complex support.
+	  Nuvoton NPCM750 BMC based on the Cortex A9.
 
 endif
