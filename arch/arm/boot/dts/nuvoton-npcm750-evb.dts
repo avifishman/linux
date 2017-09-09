@@ -30,30 +30,28 @@
 	cpus {
 		enable-method = "nuvoton,npcm7xx-smp";
 	};
+};
 
-	clk: clock-controller@f0801000 {
-		status = "okay";
-	};
+&clk {
+	status = "okay";
+};
 
-	apb {
-		watchdog1: watchdog@f0009000 {
-			status = "okay";
-		};
+&watchdog1 {
+	status = "okay";
+};
 
-		serial0: serial0@f0001000 {
-			status = "okay";
-		};
+&serial0 {
+	status = "okay";
+};
 
-		serial1: serial1@f0002000 {
-			status = "okay";
-		};
+&serial1 {
+	status = "okay";
+};
 
-		serial2: serial2@f0003000 {
-			status = "okay";
-		};
+&serial2 {
+	status = "okay";
+};
 
-		serial3: serial3@f0004000 {
-			status = "okay";
-		};
-	};
+&serial3 {
+	status = "okay";
 };
