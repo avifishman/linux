@@ -507,7 +507,7 @@ config COH901327_WATCHDOG
 config NPCM750_WATCHDOG
 	bool "NPCM750 watchdog"
 	depends on CPU_NPCM750 || COMPILE_TEST
-	default y if MACH_NPCM750
+	default y if CPU_NPCM750
 	select WATCHDOG_CORE
 	help
 	  Say Y here to include Watchdog timer support for the

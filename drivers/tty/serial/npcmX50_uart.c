@@ -247,7 +247,7 @@ typedef enum
 } NPCMX50_UART_MUX_T;
 #endif
 
-#ifdef CONFIG_MACH_NPCM750
+#ifdef CONFIG_CPU_NPCM750
 /*---------------------------------------------------------------------------------------------------------*/
 /* Uart Mux modes definitions. These numbers match the register field value. Do not change !               */
 /* s == snoop                                                                                              */
