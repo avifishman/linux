@@ -111,10 +111,10 @@
 		interrupt-parent = <&gic>;
 		ranges;
 
-		timer0: timer@f0000000 {
+		timer0: timer@f0008000 {
 			compatible = "nuvoton,npcm750-timer";
 			interrupts = <0 32 4>;
-			reg = <0xf0000000 0x1000>;
+			reg = <0xf0008000 0x1000>;
 			clocks = <&clk NPCM7XX_CLK_TIMER>;
 		};
 
